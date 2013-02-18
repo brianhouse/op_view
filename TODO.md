@@ -15,3 +15,6 @@ timestamps
 
 mapbox
 leaflet
+
+
+turning on the local Apache webserver
