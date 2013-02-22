@@ -2,10 +2,10 @@
 // however, anything that starts with a $ is a jquery shortcut - it makes things like loading data much easier
 // and anything that starts with an L is from leaflet - it handles all the dirty work of displaying maps
 
-var mapbox_username = "brianhouse";
-var mapbox_map_id = "124z30te";
+var mapbox_username = "";
+var mapbox_map_id = "";
 var map_tiles_url = "http://a.tiles.mapbox.com/v3/" + mapbox_username + ".map-" + mapbox_map_id + "/{z}/{x}/{y}.png";
-var path_to_data = "openpaths_house.json";
+var path_to_data = "";
 
 var map;
 var markers = [];
