@@ -1,7 +1,7 @@
 OP View
 =======
 
-A small pedagogical framework for looking at OpenPaths data with MapBox and Leaflet
+A small pedagogical framework for looking at OpenPaths data with [MapBox](http://mapbox.com/) and [Leaflet](leafletjs.com)
 
 
 ### Copyright/License
