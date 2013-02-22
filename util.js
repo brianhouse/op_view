@@ -1,6 +1,6 @@
 function getDate (str) {
     var d = str.match(/\d+/g); // extract date parts
-    return new Date(d[0], d[1] - 1, d[2], d[3], d[4], d[5]); // build Date object
+    return new Date(d[0], d[1] - 1, d[2], d[3], d[4], d[5]); // build Date object. is it UTC or local?
 }
 
 function hsvToRgb (h, s, v) {

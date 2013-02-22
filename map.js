@@ -1,10 +1,20 @@
+// this document is in javascript
+// however, anything that starts with a $ is a jquery shortcut - it makes things like loading data much easier
+// and anything that starts with an L is from leaflet - it handles all the dirty work of displaying maps
+
+var mapbox_username = "brianhouse";
+var mapbox_map_id = "124z30te";
+var map_tiles_url = "http://a.tiles.mapbox.com/v3/" + mapbox_username + ".map-" + mapbox_map_id + "/{z}/{x}/{y}.png";
+var path_to_data = "openpaths_house.json";
+
 var map;
 var markers = [];
 
+// this is a javscript comment
+// this function creates our map and sets parameters
 function initMap () {
-    console.log("initMap");
-    map = new L.map('map', {
-        layers: new L.TileLayer('http://a.tiles.mapbox.com/v3/brianhouse.map-124z30te/{z}/{x}/{y}.png'),
+    map = new L.map('map', {        // 'map' here refers to the <div> in our HTML
+        layers: new L.TileLayer(map_tiles_url),
         center: new L.LatLng(41.819900, -71.400500),
         zoomControl: true,
         attributionControl: false,
@@ -22,9 +32,9 @@ function initMap () {
     // map.setZoom(17);    
 }
 
+// this function loads points from an openpaths file
 function loadPoints (start_date, end_date) {
-    console.log("loadPoints");
-    $.getJSON("openpaths_house.json", function(data) {
+    $.getJSON(path_to_data, function(data) {
         var latlngs = [];
         $.each(data, function(index, location_object) {
             var date = new Date(location_object['t'] * 1000);
@@ -41,6 +51,7 @@ function loadPoints (start_date, end_date) {
     });    
 }
 
+// this function assigns our colors, by hour
 function getColor (date) {
     // brightness is full at noon, none at midnight    
     var hue;
@@ -60,8 +71,8 @@ function getColor (date) {
     return color;
 }
 
+// this function finds the center of all points, and pans the map
 function getCenter () {
-    console.log("getCenter");
     var lats = 0;
     var lngs = 0;
     for (var i=0; i<markers.length; i++) {
@@ -71,6 +82,7 @@ function getCenter () {
     return new L.LatLng(lats / markers.length, lngs / markers.length);
 }
 
+// this code runs after the HTML is loaded
 $(document).ready(function() {                   
 
     var start_date = getDate("2013-02-16 00:00:00");
@@ -79,6 +91,6 @@ $(document).ready(function() {
     loadPoints(start_date, end_date);
     initMap();
     
-    // need a key
+    // need a color key
 
 });

@@ -1,12 +1,25 @@
 <html>
+
+    <!-- this is HTML! -->
+
+    <!-- this is a comment -->
+    <!-- stuff between the <head> tags tell the browser about the page -->
     <head>
+
         <title>OpenPaths data</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />        
+
+        <!-- these files are loaded from leaflet.js and let us use their mapping functions -->
         <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.4/leaflet.css" />
         <script src="http://cdn.leafletjs.com/leaflet-0.4/leaflet.js"></script>
+
+        <!-- jquery is a general purpose library that makes javascript suck less bad -->
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+        <!-- these are references to our own javascript -->
         <script type="text/javascript" src="util.js"></script>
         <script type="text/javascript" src="map.js"></script>
+
+        <!-- this is CSS. it tells the browser how to display the page -->
         <style type="text/css">
             body {
                 margin: none;
@@ -20,8 +33,15 @@
                 border: 1px solid black;               
             }     
         </style>
+
     </head>
+
+    <!-- stuff in the body is what is actually on the page. in this case, not much -->
+    <!-- type some stuff betwen the <body> tags and reload the page to see what happens -->
     <body>
-         <div id="map"></div>
+
+         <div id="map"></div> <!-- a div is just a container. map.js will tell the browser what to do with it. -->
+
     </body>
+
 </html>
